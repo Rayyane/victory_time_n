@@ -50,6 +50,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block; }
 
 body {
+
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
@@ -8374,6 +8375,33 @@ h1, h2, h3, h4, h5,
   padding-right: 10%;
   background-color: rgba(0,0,0,0.5);
 }
+@media (max-width: 767.98px) {
+  .hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: rgba(0,0,0,0.5);
+  }
+}
+
+@media (max-width: 991px) {
+  .hero .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: rgba(0,0,0,0.5);
+  }
+}
 
 .hero .hero-text {
   display: flex;
@@ -8679,6 +8707,138 @@ h1, h2, h3, h4, h5,
       background: #fff; }
     .hero-wrap.hero-wrap-2 .slider-text {
       height: 600px; }
+
+
+#service-clock {
+  min-height: 100vh;
+  display: flex;
+  /*padding-top: 5%;*/
+  justify-content: center;
+  align-items: center;
+  border: 3px solid green;
+}
+
+#time .circle {
+  position: relative;
+  background-color: gray;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);*/
+}
+
+#time .circle svg {
+  position: relative;
+  width: 600px;
+  height: 600px;
+}
+
+#time .circle svg polygon{
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke: #515252 ;
+  stroke-width: 2px;
+  /*video's 10:40 in this line if text alignment issues arise*/
+}
+
+#time .circle svg polygon:nth-child(2){
+  stroke: #e45826;
+  stroke-dasharray: 1475;
+  /*stroke-dashoffset: ;*/
+  animation: dash 24s linear infinite;
+}
+
+svg circle {
+  fill: #515252;
+  /*animation: pulse 2s linear;*/
+}
+
+/*svg circle:nth-child(15) {
+  fill: blue;
+  animation: custom-fill 24s linear;
+}*/
+
+@keyframes custom-fill {
+  0%{
+    fill: #515252;
+  }
+
+  50%{
+    fill: #e45826;
+  }
+
+  100%{
+    fill: #515252;
+  }
+}
+
+svg circle:nth-child(1) {fill: red; }
+svg circle:nth-child(2) {fill: blue; }
+svg circle:nth-child(3) {animation: custom-fill 24s infinite; animation-delay: 0.0s;} /*child 1*/
+svg circle:nth-child(4) {animation: custom-fill 24s infinite; animation-delay: 2.0s;}
+svg circle:nth-child(5) {animation: custom-fill 24s infinite; animation-delay: 4.0s;}
+svg circle:nth-child(6) {animation: custom-fill 24s infinite; animation-delay: 6.0s;}
+svg circle:nth-child(7) {animation: custom-fill 24s infinite; animation-delay: 8.0s;}
+svg circle:nth-child(8) {animation: custom-fill 24s infinite; animation-delay: 10.0s;}
+svg circle:nth-child(9) {animation: custom-fill 24s infinite; animation-delay: 12.0s;}
+svg circle:nth-child(10) {animation: custom-fill 24s infinite; animation-delay: 14.0s;}
+svg circle:nth-child(11) {animation: custom-fill 24s infinite; animation-delay: 16.0s;}
+svg circle:nth-child(12) {animation: custom-fill 24s infinite; animation-delay: 18.0s;}
+svg circle:nth-child(13) {animation: custom-fill 24s infinite; animation-delay: 20.0s;}
+svg circle:nth-child(14) {animation: custom-fill 24s infinite; animation-delay: 22.0s;}
+
+@keyframes custom-fill {
+  0%{
+    fill: #e45826;
+  }
+  4.17% {
+    fill: #e45826;
+  }
+  5%{
+    fill: #515252;
+  }
+  100%{
+    fill: #515252;
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1475;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#time .circle .dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+}
+
+#time .circle .dots::before {
+  content: '';
+  position: absolute;
+  top: 55px;
+  width: 15px;
+  height: 15px;
+  background: #e45826;
+  border-radius: 50%;
+}
+
+#time div {
+  position: absolute;
+  text-align: center;
+}
 
 .slider-text .icon-video {
   padding: 10px;
